@@ -1,0 +1,7 @@
+*.uv*
+*~
+*.swp
+/list
+/obj
+EventRecorderStub.scvd
+JLinkLog.txt
