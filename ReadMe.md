@@ -2,6 +2,18 @@
 
 这是一个使用[rt-thread](https://www.rt-thread.org/)开发Ch579m的例子(仅供测试)。
 
+## 源代码下载
+
+由于本源代码包含第三方源代码,故直接下载可能有部分源代码缺失，需要通过以下方法解决:
+
+- 在进行git clone 使用--recurse-submodules参数。
+
+- 若已通过git clone下载,则在源代码目录中执行以下命令下载子模块:
+
+  ```bash
+   git submodule update --init --recursive
+  ```
+
 # 编译条件
 
 - 安装好Rt-Thread Env工具。
