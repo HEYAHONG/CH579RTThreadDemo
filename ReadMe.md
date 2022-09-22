@@ -23,7 +23,7 @@
 
 # 编译
 
-- 打开Rt-Thread Env工具(运行env.exe),切换至工程目录(即bootstrap.bat所在目录)。
+- 打开Rt-Thread Env工具(运行env.exe,最好使用管理员权限),切换至工程目录(即bootstrap.bat所在目录)。
 - 运行bootstrap.bat,将产生project.uvprojx。
 - 使用keil5打开project.uvprojx编译调试。
 
