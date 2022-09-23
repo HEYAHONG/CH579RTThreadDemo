@@ -8,8 +8,12 @@ Execute('fsgen fs RC_fs.c')
 cwd = GetCurrentDir()
 
 # The set of source files associated with this SConscript file.
-src = Glob('./RC*.c')
-src += Glob('./*.h')
+src = Split("""
+RC.c
+RC.h
+RC_fs.c
+""")
+
 
 path = [cwd, str(Dir('#'))]
 
