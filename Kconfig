@@ -1,0 +1,8 @@
+menu "RT-Thread  App config"
+
+
+config RTT_APP_DIR
+    string
+    default "../../../../../"
+
+endmenu

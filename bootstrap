@@ -52,6 +52,7 @@ rm -rf ${RTTHREADBSPDIR}/applications
 rm -rf ${RTTHREADBSPDIR}/.config
 cp -f ${WORKDIR}/.config ${RTTHREADBSPDIR}/.config
 cmd /c mklink.bat
+if [ -f ${WORKDIR}/Kconfig ]; then echo 'source "$RTT_DIR/../Kconfig"' >> ${RTTHREADBSPDIR}/Kconfig; fi
 
 echo -e   "\033[44;37m处理相关补丁\r\n\033[40;37m";
 cd ${WORKDIR}

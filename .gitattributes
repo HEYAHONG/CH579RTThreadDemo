@@ -5,6 +5,7 @@
 
 * text=auto
 bootstrap text eol=lf  
+Kconfig text eol=lf
 
 *.S text
 *.asm text
