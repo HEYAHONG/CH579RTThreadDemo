@@ -51,6 +51,7 @@ echo -e   "\033[44;37m处理相关文件\r\n\033[40;37m";
 rm -rf ${RTTHREADBSPDIR}/applications
 rm -rf ${RTTHREADBSPDIR}/.config
 cp -f ${WORKDIR}/.config ${RTTHREADBSPDIR}/.config
+cp -f ${WORKDIR}/rtconfig.h ${RTTHREADBSPDIR}/rtconfig.h
 cmd /c mklink.bat
 if [ -f ${WORKDIR}/Kconfig ]; then echo 'source "$RTT_DIR/../Kconfig"' >> ${RTTHREADBSPDIR}/Kconfig; fi
 
