@@ -60,7 +60,7 @@ cd ${WORKDIR}
 for i in `ls "patchs/*.patch" 2>/dev/null`
 do
 echo applying $i
-patch  -p1 -d ${RTTHREADDIR} < ${WORKDIR}/$i;
+patch  -p1 --binary  -d ${RTTHREADDIR} < ${WORKDIR}/$i;
 [ $? -eq 0 ] || exit;
 echo -e "\r\n";
 done
