@@ -15,6 +15,8 @@ cmd /c scons --target=mdk5
 
 cd /d %PROJECT_PATH%
 
+copy /Y /V %RTTHREADBSPDIR_PATH%\.config .config
+
 goto Eof
 :Error
 exit /b -1
