@@ -1,0 +1,11 @@
+--- rt-thread_old/components/net/lwip/port/lwipopts.h	2022-09-17 09:33:30.767334400 +0800
++++ rt-thread/components/net/lwip/port/lwipopts.h	2022-09-24 23:39:56.669716700 +0800
+@@ -372,7 +372,7 @@
+ #define TCP_QUEUE_OOSEQ             1
+ 
+ /* TCP Maximum segment size. */
+-#define TCP_MSS                     1460
++#define TCP_MSS                     768
+ 
+ /* TCP sender buffer space (bytes). */
+ #ifdef RT_LWIP_TCP_SND_BUF

@@ -12,5 +12,12 @@ int main(void)
             printf("%s", banner);
     }
 
+    {
+        //¥Ú”° £”‡ƒ⁄¥Ê
+        rt_size_t total = 0, used = 0;
+        rt_memory_info(&total, &used, NULL);
+        printf("\r\nTotal Memory:%d Bytes,Used Memory:%d Bytes\r\n", (int)total, (int)used);
+    }
+
     return RT_EOK;
 }
