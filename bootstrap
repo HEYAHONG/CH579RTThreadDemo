@@ -1,8 +1,6 @@
 #!/bin/bash
 
 export WORKDIR=${PROJECT_PATH_FIX}
-export RTTHREADDIR=${PROJECT_PATH_FIX}/rt-thread
-export RTTHREADBSPDIR=${PROJECT_PATH_FIX}/rt-thread/bsp/wch/arm/ch579m
 
 #检查工具是否存在,$1为待检查的工具名。
 function CheckTool
@@ -51,7 +49,7 @@ cd ${WORKDIR}
 echo -e   "\033[44;37m处理相关文件\r\n\033[40;37m";
 
 rm -rf ${RTTHREADBSPDIR}/applications
-cmd /c mklink.cmd
+cmd /c mklink.bat
 
 echo -e   "\033[44;37m处理相关补丁\r\n\033[40;37m";
 cd ${WORKDIR}

@@ -14,6 +14,13 @@
    git submodule update --init --recursive
   ```
 
+## 脚本说明
+
+所有脚本均需要在Rt-Thread Env中执行。
+
+- bootstrap.bat:工程初始化脚本
+- menuconfig.bat:Kconfig配置及组件裁剪脚本,必须在bootstrap.bat后使用。
+
 # 编译条件
 
 - 安装好Rt-Thread Env工具。
