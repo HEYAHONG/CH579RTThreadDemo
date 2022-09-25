@@ -1,0 +1,16 @@
+--- rt-thread_old/bsp/wch/arm/ch579m/board/drv_eth.h	2022-09-25 10:57:22.009546900 +0800
++++ rt-thread/bsp/wch/arm/ch579m/board/drv_eth.h	2022-09-25 18:57:40.202854900 +0800
+@@ -11,8 +11,12 @@
+ #ifndef __DRV_ETH_H__
+ #define __DRV_ETH_H__
+ #include <rtthread.h>
++#include <lwipopts.h>
+ 
+-#define ETH_BUF_SIZE 1536
++/*
++以太网的缓冲区大小为TCP_MSS+40(TCP 头)+18(以太网帧头帧尾)+18（为了凑够之前的默认时的值1536）
++*/
++#define ETH_BUF_SIZE (TCP_MSS+40+18+18)
+ 
+ int rt_hw_eth_init(void);
+ 
