@@ -57,6 +57,10 @@ if [ -f ${WORKDIR}/Kconfig ]; then echo 'source "$RTT_DIR/../Kconfig"' >> ${RTTH
 
 echo -e   "\033[44;37m处理相关补丁\r\n\033[40;37m";
 cd ${WORKDIR}
+
+#减少git换行符问题
+git checkout patchs
+
 for i in `ls "patchs/*.patch" 2>/dev/null`
 do
 echo applying $i
