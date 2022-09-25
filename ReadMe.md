@@ -4,6 +4,8 @@
 
 ## 源代码下载
 
+**注意:由于换行符问题,请在Rt-Thread Env中使用git下载或者下载后在下载目录执行git reset --hard。**
+
 由于本源代码包含第三方源代码,故直接下载可能有部分源代码缺失，需要通过以下方法解决:
 
 - 在进行git clone 使用--recurse-submodules参数。
