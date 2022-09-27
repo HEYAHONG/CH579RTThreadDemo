@@ -3,10 +3,11 @@
 *.h linguist-language=C
 *.H linguist-language=C
 
-* text=auto
+* -text
 bootstrap text eol=lf  
 Kconfig text eol=lf
 
+*.patch text
 *.S text
 *.asm text
 *.c text
