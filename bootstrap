@@ -61,7 +61,7 @@ cd ${WORKDIR}
 #减少git换行符问题
 git checkout patchs
 
-for i in `ls "patchs/*.patch" 2>/dev/null`
+for i in `ls "patches/*.patch" 2>/dev/null`
 do
 echo applying $i
 patch  -p1 --binary  -d ${RTTHREADDIR} < ${WORKDIR}/$i;
