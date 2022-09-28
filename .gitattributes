@@ -3,7 +3,7 @@
 *.h linguist-language=C
 *.H linguist-language=C
 
-* text
+* text=auto
 bootstrap text eol=lf  
 Kconfig text eol=lf
 LICENSE text eol=lf
