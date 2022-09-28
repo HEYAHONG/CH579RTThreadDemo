@@ -59,7 +59,7 @@ echo -e   "\033[44;37m处理相关补丁\r\n\033[40;37m";
 cd ${WORKDIR}
 
 #减少git换行符问题
-git checkout patchs
+git checkout patches
 
 for i in `ls "patches/*.patch" 2>/dev/null`
 do
