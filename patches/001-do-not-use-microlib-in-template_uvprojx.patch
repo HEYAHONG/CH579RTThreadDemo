@@ -1,0 +1,11 @@
+--- rt-thread_old/bsp/wch/arm/ch579m/template.uvprojx 2022-09-29 09:51:43.036266200 +0800
++++ rt-thread/bsp/wch/arm/ch579m/template.uvprojx 2022-09-29 09:51:57.244059400 +0800
+@@ -188,7 +188,7 @@
+             <hadIRAM2>0</hadIRAM2>
+             <hadIROM2>0</hadIROM2>
+             <StupSel>8</StupSel>
+-            <useUlib>1</useUlib>
++            <useUlib>0</useUlib>
+             <EndSel>0</EndSel>
+             <uLtcg>0</uLtcg>
+             <nSecure>0</nSecure>

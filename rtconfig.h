@@ -12,6 +12,9 @@
 #define RT_THREAD_PRIORITY_MAX 32
 #define RT_TICK_PER_SECOND 1000
 #define IDLE_THREAD_STACK_SIZE 256
+#define RT_USING_TIMER_SOFT
+#define RT_TIMER_THREAD_PRIO 4
+#define RT_TIMER_THREAD_STACK_SIZE 512
 
 /* kservice optimization */
 
@@ -20,6 +23,7 @@
 
 #define RT_USING_SEMAPHORE
 #define RT_USING_MUTEX
+#define RT_USING_EVENT
 #define RT_USING_MAILBOX
 #define RT_USING_MESSAGEQUEUE
 
@@ -76,12 +80,16 @@
 
 /* POSIX (Portable Operating System Interface) layer */
 
+#define RT_USING_POSIX_DELAY
+#define RT_USING_POSIX_CLOCK
+#define RT_USING_POSIX_TIMER
 
 /* Interprocess Communication (IPC) */
 
 
 /* Socket is in the 'Network' category */
 
+#define RT_USING_CPLUSPLUS
 
 /* Network */
 
@@ -218,9 +226,6 @@
 /* Arduino libraries */
 
 
-/* Projects */
-
-
 /* Sensors */
 
 
@@ -230,21 +235,8 @@
 /* Timing */
 
 
-/* Data Processing */
+/* Projects */
 
-
-/* Data Storage */
-
-/* Communication */
-
-/* Device Control */
-
-/* Other */
-
-/* Signal IO */
-
-
-/* Uncategorized */
 
 /* Hardware Drivers Config */
 
