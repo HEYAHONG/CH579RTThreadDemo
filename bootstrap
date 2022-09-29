@@ -39,10 +39,13 @@ echo -e   "\033[44;37m下载第三方源代码\r\n\033[40;37m";
 
 cd ${WORKDIR}
 git submodule update --init --recursive
+[ $? -eq 0 ] || exit;
 cd ${RTTHREADDIR}
 #恢复rt-thread源代码目录
 git clean -f
+[ $? -eq 0 ] || exit;
 git reset --hard
+[ $? -eq 0 ] || exit;
 cd ${WORKDIR}
 
 
@@ -60,6 +63,7 @@ cd ${WORKDIR}
 
 #减少git换行符问题
 git checkout patches
+[ $? -eq 0 ] || exit;
 
 for i in `ls "patches/*.patch" 2>/dev/null`
 do
@@ -72,7 +76,9 @@ done
 echo -e   "\033[44;37m生成Keil5工程文件\r\n\033[40;37m";
 cd  ${RTTHREADBSPDIR}
 cmd /c  pkgs --update
+[ $? -eq 0 ] || exit;
 cmd /c scons --target=mdk5
+[ $? -eq 0 ] || exit;
 cd ${WORKDIR}
 
 echo -e   "\033[44;37m处理已完成!请打开project.uvprojx进行编译调试\r\n\033[40;37m";
