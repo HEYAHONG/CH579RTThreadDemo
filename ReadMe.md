@@ -22,6 +22,7 @@
 
 - bootstrap.bat:工程初始化脚本
 - menuconfig.bat:Kconfig配置及组件裁剪脚本,必须在bootstrap.bat后使用。
+- codestyle.bat:代码整理脚本,整理src目录下的源代码。每次提交前推荐使用此脚本整理代码。
 
 # 编译条件
 
