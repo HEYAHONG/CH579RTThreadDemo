@@ -28,10 +28,18 @@ CheckTool ls
 [ $? -eq 0 ] || exit;
 CheckTool cmd
 [ $? -eq 0 ] || exit;
+CheckTool python
+[ $? -eq 0 ] || exit;
 CheckTool pkgs
 [ $? -eq 0 ] || exit;
 CheckTool scons
 [ $? -eq 0 ] || exit;
+
+
+#更新python软件包
+python -m pip install -U pip || python  ${WORKDIR}/tools/bin/get-pip.py
+python -m pip install -U scons
+
 
 echo -e  "\033[44;37m工程目录:${PROJECT_PATH_FIX}\r\n\033[40;37m";
 
