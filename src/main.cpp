@@ -32,6 +32,7 @@ int main(void)
                 printf("mount user flash ...\r\n");
                 if (dfs_mount(APP_FLASHAREA_DEVNAME, "/", "lfs", 0, NULL) != 0)
                 {
+                    app_erase_flashdev();
                     dfs_mkfs("lfs", APP_FLASHAREA_DEVNAME);
                     printf("format flash finished,it will reboot...\r\n");
                     rt_thread_mdelay(1000);

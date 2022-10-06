@@ -9,6 +9,7 @@ extern "C" {
 uint32_t app_get_flasharea_addr(void);
 uint32_t app_get_flasharea_size(void);
 int app_flashdev_init(void);
+void app_erase_flashdev(void);
 #define APP_FLASHAREA_DEVNAME "uflash"
 
 #ifdef __cplusplus

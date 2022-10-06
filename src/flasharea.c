@@ -98,3 +98,13 @@ int app_flashdev_init(void)
     return RT_EOK;
 }
 
+void app_erase_flashdev(void)
+{
+    {
+        const size_t erase_size = 512;
+        for (unsigned int addr = (unsigned int)app_get_flasharea_addr(); addr < app_get_flasharea_addr() + app_get_flasharea_size(); addr += erase_size)
+        {
+            FlashBlockErase(addr);
+        }
+    }
+}
