@@ -24,6 +24,28 @@
 - menuconfig.bat:Kconfig配置及组件裁剪脚本,必须在bootstrap.bat后使用。
 - codestyle.bat:代码整理脚本,整理src目录下的源代码。每次提交前推荐使用此脚本整理代码。
 
+## 资源文件
+
+类似于桌面程序的资源文件。源代码实现的目录为 [rc](rc/)。
+
+在固件编写中，很多时候需要大量的固定数据，直接手工嵌入到C文件里比较麻烦。
+
+通过读取文件转换到对应C文件可大大节省时间，可添加常用的文件（如各种证书）或者不适宜放在可读写的文件系统中的文件(如需要在格式化中保留或者初始参数)。转换程序源代码为[rc/fsgen.cpp](rc/fsgen.cpp)。
+
+使用步骤如下:
+
+- 将待添加的文件放入 rc/fs目录下。
+
+- 使用文件名调用以下函数(需包含相应头文件RC.h):
+
+  ```c++
+  //通过名称获取资源大小
+  size_t RCGetSize(const char * name);
+  
+  //通过名称获取资源指针
+  const unsigned char * RCGetHandle(const char * name);
+  ```
+
 # 编译条件
 
 - 安装好Rt-Thread Env工具。
