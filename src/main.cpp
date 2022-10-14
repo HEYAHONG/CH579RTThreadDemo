@@ -7,8 +7,66 @@
 #include <rthw.h>
 #include "flasharea.h"
 
+#ifndef  OVERRIDE
+#define OVERRIDE(x) $Sub$$##x
+#endif
+
+/*
+”≤º˛¥ÌŒÛ÷–∂œπ≥◊”
+*/
+#if defined(RT_USING_FINSH) && defined(MSH_USING_BUILT_IN_COMMANDS)
+extern "C"
+{
+    extern long list_thread(void);
+}
+#endif
+
+extern "C"
+{
+    rt_err_t OVERRIDE(rt_hw_hard_fault_exception)(void *context)
+    {
+#if defined(RT_USING_FINSH) && defined(MSH_USING_BUILT_IN_COMMANDS)
+        list_thread();
+#endif
+
+#ifdef APP_AUTORESET_ON_ERROR
+        printf("hardfault occurred,system will reboot ... \r\n\r\n");
+        rt_hw_cpu_reset();
+#endif
+
+        return 0;
+    }
+
+}
+
+#ifdef RT_DEBUG
+/*
+RT Thread∂œ—‘
+*/
+static __attribute__((unused)) void assert_hook(const char *ex, const char *func, rt_size_t line)
+{
+#if defined(RT_USING_FINSH) && defined(MSH_USING_BUILT_IN_COMMANDS)
+    list_thread();
+#endif
+
+#ifdef APP_AUTORESET_ON_ERROR
+    printf("%s -> %s:%d\r\nassert occurred,system will reboot ... \r\n\r\n", ex, func, (int)line);
+    rt_hw_cpu_reset();
+#endif
+
+}
+#endif
+
+
 int main(void)
 {
+
+    {
+#ifdef RT_DEBUG
+        rt_assert_set_hook(assert_hook);
+#endif
+    }
+
     {
         //¥Ú”°banner
         char *banner = (char *)RCGetHandle("banner");

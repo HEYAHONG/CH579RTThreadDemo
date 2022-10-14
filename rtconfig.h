@@ -18,6 +18,7 @@
 
 /* kservice optimization */
 
+#define RT_DEBUG
 
 /* Inter-Thread communication */
 
@@ -292,5 +293,12 @@
 /* RT-Thread  App config */
 
 #define RTT_APP_DIR "../../../../../"
+
+/* Main */
+
+#define APP_AUTORESET_ON_ERROR
+
+/* Lib */
+
 
 #endif

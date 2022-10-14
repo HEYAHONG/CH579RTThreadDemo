@@ -5,4 +5,13 @@ config RTT_APP_DIR
     string
     default "../../../../../"
 
+menu "Main"
+source "$RTT_APP_DIR/src/Kconfig"
+endmenu
+
+menu "Lib"
+source "$RTT_APP_DIR/lib/Kconfig"
+endmenu
+
+
 endmenu
