@@ -59,7 +59,13 @@
 - 运行bootstrap.bat,将产生project.uvprojx。
 - 使用keil5打开project.uvprojx编译调试。
 
-注意:添加源代码需要放在src目录中,每次更新了src目录都需要重新运行bootstrap.bat,在keil5添加文件只是临时的。
+### 注意
+
+- 添加源代码需要放在src目录中,每次更新了src目录都需要重新运行bootstrap.bat或者menuconfig.bat,在keil5添加文件只是临时的。
+- 如果遇到错误,请尝试关闭Rt-Thread Env窗口后重新打开一个新的Rt-Thread Env窗口执行脚本。
+
+
+
 
 # 调试
 
