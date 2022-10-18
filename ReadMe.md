@@ -4,7 +4,8 @@
 
 ## 注意
 
-- 由于内存过小,为MQTT关闭的软定时器与Finsh(msh)。如有需要使用Finsh(msh),需要先关闭MQTT在打开Finsh(msh)。
+- 由于内存过小,为MQTT关闭了软定时器与Finsh(msh)。如有需要使用Finsh(msh),需要先关闭MQTT在打开Finsh(msh)。
+- 由于内存较小,MQTT未启用TLS。
 
 ## 源代码下载
 
