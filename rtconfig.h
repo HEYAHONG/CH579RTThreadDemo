@@ -12,9 +12,6 @@
 #define RT_THREAD_PRIORITY_MAX 32
 #define RT_TICK_PER_SECOND 1000
 #define IDLE_THREAD_STACK_SIZE 256
-#define RT_USING_TIMER_SOFT
-#define RT_TIMER_THREAD_PRIO 4
-#define RT_TIMER_THREAD_STACK_SIZE 512
 
 /* kservice optimization */
 
@@ -48,19 +45,6 @@
 #define RT_USING_USER_MAIN
 #define RT_MAIN_THREAD_STACK_SIZE 1024
 #define RT_MAIN_THREAD_PRIORITY 10
-#define RT_USING_MSH
-#define RT_USING_FINSH
-#define FINSH_USING_MSH
-#define FINSH_THREAD_NAME "tshell"
-#define FINSH_THREAD_PRIORITY 20
-#define FINSH_THREAD_STACK_SIZE 2048
-#define FINSH_USING_HISTORY
-#define FINSH_HISTORY_LINES 5
-#define FINSH_USING_SYMTAB
-#define FINSH_CMD_SIZE 80
-#define MSH_USING_BUILT_IN_COMMANDS
-#define FINSH_USING_DESCRIPTION
-#define FINSH_ARG_MAX 10
 #define RT_USING_DFS
 #define DFS_USING_POSIX
 #define DFS_USING_WORKDIR
@@ -72,6 +56,9 @@
 /* Device Drivers */
 
 #define RT_USING_DEVICE_IPC
+#define RT_USING_SYSTEM_WORKQUEUE
+#define RT_SYSTEM_WORKQUEUE_STACKSIZE 2048
+#define RT_SYSTEM_WORKQUEUE_PRIORITY 23
 #define RT_USING_SERIAL
 #define RT_USING_SERIAL_V1
 #define RT_SERIAL_RB_BUFSZ 64
@@ -91,13 +78,16 @@
 
 #define RT_USING_POSIX_FS
 #define RT_USING_POSIX_DEVIO
-#define RT_USING_POSIX_STDIO
+#define RT_USING_POSIX_POLL
+#define RT_USING_POSIX_SELECT
+#define RT_USING_POSIX_SOCKET
 #define RT_USING_POSIX_DELAY
 #define RT_USING_POSIX_CLOCK
-#define RT_USING_POSIX_TIMER
 
 /* Interprocess Communication (IPC) */
 
+#define RT_USING_POSIX_PIPE
+#define RT_USING_POSIX_PIPE_SIZE 512
 
 /* Socket is in the 'Network' category */
 
@@ -105,6 +95,13 @@
 
 /* Network */
 
+#define RT_USING_SAL
+#define SAL_INTERNET_CHECK
+
+/* Docking with protocol stacks */
+
+#define SAL_USING_LWIP
+#define SAL_USING_POSIX
 #define RT_USING_NETDEV
 #define NETDEV_USING_IFCONFIG
 #define NETDEV_USING_PING
@@ -165,6 +162,11 @@
 
 /* IoT - internet of things */
 
+#define PKG_USING_PAHOMQTT
+#define PAHOMQTT_PIPE_MODE
+#define RT_PKG_MQTT_THREAD_STACK_SIZE 1024
+#define PKG_PAHOMQTT_SUBSCRIBE_HANDLERS 1
+#define MQTT_DEBUG
 
 /* Wi-Fi */
 
@@ -297,8 +299,11 @@
 /* Main */
 
 #define APP_AUTORESET_ON_ERROR
+#define APP_MQTT_PROTOCOL_HELLO
+#define APP_MQTT_URI "tcp://mqtt.hyhsystem.cn:1883"
 
 /* Lib */
 
+#define APP_USING_PAHOMQTT
 
 #endif

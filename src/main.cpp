@@ -57,6 +57,15 @@ static __attribute__((unused)) void assert_hook(const char *ex, const char *func
 }
 #endif
 
+#ifdef APP_USING_PAHOMQTT
+#include "MQTT.h"
+#endif
+
+extern "C"
+{
+    extern uint8_t eth_mac_addr[];
+}
+
 
 int main(void)
 {
@@ -99,6 +108,24 @@ int main(void)
             }
         }
     }
+
+    {
+        //ÉèÖÃmacµØÖ·
+        eth_mac_addr[5] = ((R32_ETH_MAADRL >> 0) & 0xFF);
+        eth_mac_addr[4] = ((R32_ETH_MAADRL >> 8) & 0xFF);
+        eth_mac_addr[3] = ((R32_ETH_MAADRL >> 16) & 0xFF);
+        eth_mac_addr[2] = ((R32_ETH_MAADRL >> 24) & 0xFF);
+        eth_mac_addr[1] = ((R16_ETH_MAADRH >> 0) & 0xFF);
+        eth_mac_addr[0] = ((R16_ETH_MAADRH >> 8) & 0xFF);;
+
+
+    }
+
+
+#ifdef APP_USING_PAHOMQTT
+    MQTT_Init();
+#endif
+
 
     return RT_EOK;
 }

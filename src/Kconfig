@@ -2,3 +2,21 @@ config APP_AUTORESET_ON_ERROR
     bool "autoreset on error"
     default y
 
+if  APP_USING_PAHOMQTT
+
+choice APP_MQTT_PROTOCOL
+    prompt "MQTT Protocol"
+    default APP_MQTT_PROTOCOL_HELLO
+
+config APP_MQTT_PROTOCOL_HELLO
+    bool "hello"
+    
+
+endchoice
+
+config APP_MQTT_URI
+    string "MQTT Uri"
+    default "tcp://mqtt.hyhsystem.cn:1883"
+
+endif
+

@@ -8,7 +8,7 @@
 
 //define flash area
 #define flash_block_size   512//erase block size
-#define flash_block_number 128//totalsize=flash_block_size*flash_block_number
+#define flash_block_number 32//totalsize=flash_block_size*flash_block_number
 __attribute__((aligned(flash_block_size < 4096 ? 4096 : flash_block_size))) const uint8_t flash_area[flash_block_size * flash_block_number];
 
 uint32_t app_get_flasharea_addr(void)
