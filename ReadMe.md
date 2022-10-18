@@ -2,6 +2,10 @@
 
 这是一个使用[rt-thread](https://www.rt-thread.org/)开发Ch579m的例子(仅供测试)。
 
+## 注意
+
+- 由于内存过小,为MQTT关闭的软定时器与Finsh(msh)。如有需要使用Finsh(msh),需要先关闭MQTT在打开Finsh(msh)。
+
 ## 源代码下载
 
 **注意:由于换行符问题,请在Rt-Thread Env中使用git下载或者下载后在下载目录执行git reset --hard。**
