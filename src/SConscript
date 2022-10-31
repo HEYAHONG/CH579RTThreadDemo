@@ -6,12 +6,12 @@ cwd = GetCurrentDir()
 
 # The set of source files associated with this SConscript file.
 src = Glob('./*.c')
-src += Glob('./*.h')
+#src += Glob('./*.h')
 src += Glob('./*.cpp')
-src += Glob('./*.hpp')
+#src += Glob('./*.hpp')
 
 path = [cwd, str(Dir('#'))]
 
-group = DefineGroup('app', src, depend = [''], CPPPATH = path)
+group = DefineGroup('app', src, depend = [''], CPPPATH = path,LOCAL_CXXFLAGS=' --cpp11 ')
 
 Return('group')
