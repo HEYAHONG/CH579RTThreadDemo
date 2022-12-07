@@ -51,6 +51,10 @@
   const unsigned char * RCGetHandle(const char * name);
   ```
 
+## 测试截图
+
+![CH579RTThreadDemo](doc/image/CH579RTThreadDemo.png)
+
 # 编译条件
 
 - 安装好Rt-Thread Env工具。
