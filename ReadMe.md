@@ -25,8 +25,8 @@
 
 所有脚本均需要在Rt-Thread Env中执行。
 
-- bootstrap.bat:工程初始化脚本
-- menuconfig.bat:Kconfig配置及组件裁剪脚本,必须在bootstrap.bat后使用。
+- bootstrap.bat:工程初始化脚本。若工程进行了修改，请先使用git保存变更后再执行此脚本以防止修改丢失。
+- menuconfig.bat:Kconfig配置及组件裁剪脚本,必须在至少执行一次（自源代码成功下载）bootstrap.bat后使用。
 - codestyle.bat:代码整理脚本,整理src目录下的源代码。每次提交前推荐使用此脚本整理代码。
 
 ## 资源文件
