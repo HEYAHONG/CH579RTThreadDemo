@@ -46,6 +46,7 @@ echo -e  "\033[44;37m工程目录:${PROJECT_PATH_FIX}\r\n\033[40;37m";
 echo -e   "\033[44;37m下载第三方源代码\r\n\033[40;37m";
 
 cd ${WORKDIR}
+git clean -x -f -d
 git submodule update --init --force --recursive
 [ $? -eq 0 ] || exit;
 cd ${RTTHREADDIR}
